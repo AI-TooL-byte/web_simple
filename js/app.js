@@ -1,10 +1,35 @@
-const btn1 = document.getElementById('btn1');
-const btn2 = document.getElementById('btn2');
+const anterior = document.querySelector(".anterior");
+const siguiente = document.querySelector(".siguiente");
+const slides = document.querySelectorAll(".slide");
 
-btn1.addEventListener('click', () => {
-    alert('Button 1 clicked!');
-});
+let actual = 0;
 
-btn2.addEventListener('click', () => {
-    alert('Button 2 clicked!');
-});
+console.log(anterior);
+console.log(siguiente);
+console.log(slides);
+
+siguiente.onclick = function () {
+    slides[actual].classList.remove("activo");
+
+    actual++;
+
+    if (actual == slides.length) {
+        actual = 0;
+    }
+
+    slides[actual].classList.add("activo");
+    console.log("pulsado siguiente");
+};
+
+anterior.onclick = function () {
+    slides[actual].classList.remove("activo");
+
+    actual--;
+
+    if (actual < 0) {
+        actual = slides.length - 1;
+    }
+
+    slides[actual].classList.add("activo");
+    console.log("pulsado anterior");
+};

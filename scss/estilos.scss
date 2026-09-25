@@ -6,10 +6,12 @@ $letra-menus: 'roboto', sans-serif;
 
 body {
     background-color: $color-principal;
+
     header {
         display: flex;
         flex-direction: row;
         background-color: $color-header;
+
         h1 {
             color: white;
             font-size: 2rem;
@@ -17,51 +19,87 @@ body {
             font-family: $letra-header;
             margin: 0 2rem;
         }
+
         nav {
             display: flex;
-            ul{
+
+            ul {
                 display: flex;
                 align-items: center;
-                li{
+
+                li {
                     margin: 0 8rem;
+
                     a {
-                    text-decoration: none;
-                    color: white;
-                    font-weight: bold;
-                    font-family: $letra-menus;
-                    &:hover {
-                        color: #000000;
+                        text-decoration: none;
+                        color: white;
+                        font-weight: bold;
+                        font-family: $letra-menus;
+
+                        &:hover {
+                            color: #434343ed;
                         }
                     }
                 }
             }
         }
     }
-    main{
+
+    main {
         display: flex;
         flex-direction: column;
-        .presentacion{
+
+        .presentacion {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-top: 2rem;
-            img {
-                width: 400px;
-                height: auto;
-                margin-right: 2rem;
-            }
-            .texto-presentacion {
-                max-width: 600px;
-                h2 {
-                    font-size: 2rem;
-                    font-weight: bold;
-                    font-family: $letra-principal;
-                    margin-bottom: 1rem;
+
+            .carrusel {
+                position: relative;
+                width: 90%;
+                max-height: fit-content;
+                
+
+                .slide {
+                    display: none;
+                    text-align: center;
+
+                    &.activo {
+                        display: block;
+                    }
+
+                    img {
+                        width: 100%;
+                        max-height: fit-content;
+                    
+                    }
                 }
-                p {
-                    font-size: 1.2rem;
-                    font-family: $letra-principal;
+
+                button {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    border: none;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    font-size: 2rem;
+                    padding: 0.5rem 1rem;
+                    cursor: pointer;
+
+                    &.anterior {
+                        left: 0;
+                    }
+
+                    &.siguiente {
+                        right: 0;
+                    }
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.9);
+                    }
                 }
             }
         }

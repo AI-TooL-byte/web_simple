@@ -30,7 +30,7 @@ body header nav ul li a {
   font-family: "roboto", sans-serif;
 }
 body header nav ul li a:hover {
-  color: #000000;
+  color: rgba(67, 67, 67, 0.9294117647);
 }
 body main {
   display: flex;
@@ -38,28 +38,46 @@ body main {
 }
 body main .presentacion {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
 }
-body main .presentacion img {
-  width: 400px;
-  height: auto;
-  margin-right: 2rem;
+body main .presentacion .carrusel {
+  position: relative;
+  width: 90%;
+  max-height: fit-content;
 }
-body main .presentacion .texto-presentacion {
-  max-width: 600px;
+body main .presentacion .carrusel .slide {
+  display: none;
+  text-align: center;
 }
-body main .presentacion .texto-presentacion h2 {
+body main .presentacion .carrusel .slide.activo {
+  display: block;
+}
+body main .presentacion .carrusel .slide img {
+  width: 100%;
+  max-height: fit-content;
+}
+body main .presentacion .carrusel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
   font-size: 2rem;
-  font-weight: bold;
-  font-family: "montserrat", sans-serif;
-  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
-body main .presentacion .texto-presentacion p {
-  font-size: 1.2rem;
-  font-family: "montserrat", sans-serif;
+body main .presentacion .carrusel button.anterior {
+  left: 0;
+}
+body main .presentacion .carrusel button.siguiente {
+  right: 0;
+}
+body main .presentacion .carrusel button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 /*# sourceMappingURL=estilos.css.map */
